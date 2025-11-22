@@ -27,6 +27,12 @@
             --success: #00eaff;
             --card-bg: rgba(26, 26, 26, 0.7);
             --gradient: linear-gradient(135deg, #00eaff 0%, #00a2ff 100%);
+            --primary: #00eaff;
+            --secondary: #00a2ff;
+            --dark: #0d0d0d;
+            --dark-light: #1a1a1a;
+            --text: #ffffff;
+            --text-light: #cccccc;
         }
 
         html {
@@ -244,11 +250,47 @@
         }
 
         .hero-buttons {
+            margin-top: 25px;
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
+        }
+        
+        .hero button { 
+            padding: 12px 28px; 
+            background: var(--primary); 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            color: #000; 
+            font-weight: 600; 
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero button:hover { 
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 234, 255, 0.2);
+        }
+        
+        .hero button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .hero button.secondary:hover {
+            background: rgba(0, 234, 255, 0.1);
+        }
+        
+        .services, .portfolio, .contact { 
+            position: relative;
         }
 
+         
         /* Section Titles */
         .section-header {
             text-align: left;
@@ -717,10 +759,14 @@
                 <div class="hero-text">
                     <h1 class="animate">Build Software That Drives Success</h1>
                     <p class="animate delay-1">CodeSolo is a Sri Lankan software development company with 6+ years of experience creating cutting-edge mobile apps, websites, AI solutions, and advanced Telegram bots.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary animate delay-2">Start Your Project</a>
-                        <a href="#portfolio" class="btn btn-secondary animate delay-2">View Our Work</a>
-                    </div>
+                <div class="hero-buttons">
+                    <button onclick="location.href='#contact'" class="animate delay-2">
+                        <i class="fas fa-paper-plane"></i> Contact Us
+                    </button>
+                    <button onclick="location.href='#portfolio'" class="secondary animate delay-2">
+                        <i class="fas fa-eye"></i> View Portfolio
+                    </button>
+                </div>
                 </div>
                 <div class="hero-image animate delay-1">
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Software Development">
